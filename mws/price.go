@@ -169,7 +169,7 @@ func GetPrice() {
 			}
 		}
 		db.InsertProductPrice(saveProduct)
-		log.Println(saveProduct)
+		//log.Println(saveProduct)
 
 		end := time.Now()
 		// 2秒に一回のリクエストでAPI制限を受けない。
