@@ -4,8 +4,8 @@ import (
 	rss "github.com/jteeuwen/go-pkg-rss"
 	"regexp"
 	"log"
-	"./db"
-	"./mws"
+	"github.com/Azunyan1111/amazonDatabaseUpdate/db"
+	"github.com/Azunyan1111/amazonDatabaseUpdate/mws"
 	"time"
 )
 

@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
-	"../db"
+	"github.com/Azunyan1111/amazonDatabaseUpdate/db"
 )
 
 //*/
