@@ -70,7 +70,7 @@ func getProduct(){
 	}
 
 	// 最大のgoroutineの数を制限する
-	c := make(chan bool, 2000)
+	c := make(chan bool, 1000)
 	for _,foo := range allRssUrl {
 		// もしcが一杯ならこの行で待たされる
 		c <- true
