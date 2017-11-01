@@ -1,8 +1,7 @@
 package mws
 
 import (
-	"github.com/svvu/gomws/mws/products"
-	"github.com/svvu/gomws/gmws"
+
 	"os"
 	"log"
 	"time"
@@ -10,6 +9,8 @@ import (
 	"strconv"
 	"strings"
 	"github.com/Azunyan1111/amazonDatabaseUpdate/db"
+	"github.com/Azunyan1111/gomws/mws/products"
+	"github.com/Azunyan1111/gomws/gmws"
 )
 
 //*/
