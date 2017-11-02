@@ -18,7 +18,7 @@ var rssUrlR = regexp.MustCompile(`/gp/bestsellers/`)
 var product chan db.Product
 
 // 初期設定
-var timeout = 10
+var timeout = 3
 
 func main(){
 
@@ -69,7 +69,7 @@ func getProduct(){
 		allRssUrl = append(allRssUrl,mostGifted)
 	}
 	// 最大のgoroutineの数を制限する
-	c := make(chan bool, 200)
+	c := make(chan bool, 100)
 	for _,foo := range allRssUrl {
 		// もしcが一杯ならこの行で待たされる
 		c <- true
@@ -90,7 +90,6 @@ func getASIN(url string)error{
 	// RSS を取ってくる
 	err := feed.Fetch(url, nil)
 	if err != nil {
-		log.Println(err, url)
 		return err
 	}
 	return nil
