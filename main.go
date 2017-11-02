@@ -76,6 +76,9 @@ func getProduct(){
 		go func(url string) {
 			err := getASIN(url)
 			if err != nil{
+				if err.Error() == "XML syntax error on line 26: element <link> closed by </head>"{
+
+				}
 				log.Println(err)
 			}
 			// cから読みだしてその値を捨てる -- ほかのgoroutineのための空きを作る
@@ -90,7 +93,6 @@ func getASIN(url string)error{
 	// RSS を取ってくる
 	err := feed.Fetch(url, nil)
 	if err != nil {
-		log.Println(err, url, feed.Channels[0].Title)
 		return err
 	}
 	return nil
