@@ -172,9 +172,9 @@ func GetPrice() {
 		//log.Println(saveProduct)
 
 		end := time.Now()
-		// 2秒に一回のリクエストでAPI制限を受けない。
+		// 2秒に一回のリクエストでAPI制限を受けない。(2秒になるように足りない時間をスリープを入れる)
 		if (end.Sub(start)).Seconds() < 2 {
-			time.Sleep(2 * time.Second)
+			time.Sleep((2 * time.Second) - end.Sub(start))
 		}
 		//*/
 	}
