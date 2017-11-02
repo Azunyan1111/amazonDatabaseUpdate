@@ -18,7 +18,7 @@ var rssUrlR = regexp.MustCompile(`/gp/bestsellers/`)
 var product chan db.Product
 
 // 初期設定
-var timeout = 5
+var timeout = 10
 
 func main(){
 
@@ -105,7 +105,7 @@ func chanHandler(feed *rss.Feed, newChannels []*rss.Channel) {
 func itemHandler(feed *rss.Feed, ch *rss.Channel, newItems []*rss.Item) {
 	// アイテム数を出力
 	//fmt.Printf("%d new item(s) in %s\n", len(newItems), feed.Url)
-	if len(newItems) == 1 {
+	if len(newItems) < 5 {
 		return
 	}
 	// アイテム一つひとつに対する操作
