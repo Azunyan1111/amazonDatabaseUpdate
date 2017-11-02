@@ -90,6 +90,7 @@ func getASIN(url string)error{
 	// RSS を取ってくる
 	err := feed.Fetch(url, nil)
 	if err != nil {
+		log.Println(err, url, feed)
 		return err
 	}
 	return nil
